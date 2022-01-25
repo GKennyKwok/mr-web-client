@@ -1,0 +1,342 @@
+/* Authentication forms */
+
+
+.auth-main {
+    background-color: var(--font-fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+
+    a:not(.btn) {
+        color: var(--primary-color);
+    }
+
+    .auth_div {
+        // background-color: var(--font-fff);
+        width: 400px;
+        z-index: 2;
+
+        @include max-screen($break-small - 1px) {
+            width: 320px;
+        }
+
+        .card {
+            overflow: hidden;
+            background: transparent;
+            border: 0;
+        }
+    }
+
+    .auth_brand {
+        @extend .m-b-30;
+
+        .navbar-brand {
+            color: var(--dark-color);
+            font-size: 35px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .form-auth-small {
+        .btn {
+            @extend .m-t-20;
+        }
+
+        .element-left {
+            float: left;
+        }
+
+        .element-right {
+            float: right;
+        }
+
+        .bottom {
+            @extend .m-t-20;
+            @extend .align-center;
+        }
+    }
+
+    .lead {
+        @extend .m-t-5;
+        @extend .m-b-0;
+        @extend .font-20;
+        color: var(--font-color);
+    }
+
+    .lead-social {
+        @extend .m-t-0;
+        @extend .m-b-0;
+        @extend .font-20;
+        color: var(--font-color);
+    }
+
+    .helper-text {
+        color: var(--text-muted);
+        @include display-block;
+    }
+
+    .page-400,
+    .login,
+    .register,
+    .forgot-pass,
+    .logout {
+        &::before {
+            z-index: 1;
+        }
+
+        .header,
+        .body {
+            z-index: 9;
+            position: relative;
+        }
+    }
+
+    .page-400 {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '404';
+            font-size: 100px;
+            top: 20px;
+            left: 80px;
+            opacity: 0.07;
+        }
+    }
+
+    .login {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            font-family: 'Font Awesome 5 Free';
+            content: '\f007';
+            font-size: 290px;
+            font-weight: 900;
+            top: -30px;
+            left: 55px;
+            opacity: 0.03;
+        }
+    }
+
+    .register {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '\f234';
+            font-family: 'Font Awesome 5 Free';
+            font-size: 260px;
+            font-weight: 900;
+            top: 90px;
+            left: 15px;
+            opacity: 0.03;
+        }
+    }
+
+    .forgot-pass {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            font-family: 'Simple-Line-Icons';
+            content: '\e08e';
+            font-size: 290px;
+            top: -70px;
+            left: 38px;
+            opacity: 0.03;
+        }
+    }
+
+    .logout{
+        position: relative;
+
+        &::before {
+            position: absolute;
+            font-family: 'Font Awesome 5 Free';
+            content: '\f554';
+            font-size: 290px;
+            top: -80px;
+            left: 38px;
+            // opacity: 0.03;
+        }
+    }
+
+    @include max-screen($break-medium) {
+        margin: 0 auto;
+    }
+}
+
+.maintenance {
+    background: var(--white-color);
+}
+
+.animate_lines {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 90vw;
+    z-index: 1;
+
+    .line {
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        // background: rgba($dark, 0.03);        
+
+        &:after {
+            background: -webkit-gradient(linear, left bottom, left top, from(var(--border-color)), color-stop(75%, var(--primary-color)), to(var(--secondary-color)));
+            background: linear-gradient(to top, var(--border-color) 0%, var(--primary-color) 75%, var(--secondary-color) 100%);
+            content: "";
+            display: block;
+            position: absolute;
+            height: 15vh;
+            width: 100%;
+            top: -50%;
+            left: 0;
+            -webkit-animation: run 7s 0s infinite;
+            animation: run 7s 0s infinite;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+            animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+        }
+
+        &:nth-child(1) {
+            margin-left: 10%;
+
+            &:after {
+                -webkit-animation-delay: 2s;
+                animation-delay: 2s;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-left: 22%;
+
+            &:after {
+                -webkit-animation-delay: 2.8s;
+                animation-delay: 2.8s;
+            }
+        }
+
+        &:nth-child(3) {
+            margin-left: 12%;
+
+            &:after {
+                -webkit-animation-delay: 2.5s;
+                animation-delay: 2.5s;
+            }
+        }
+
+        &:nth-child(4) {
+            margin-left: 80%;
+
+            &:after {
+                -webkit-animation-delay: 3s;
+                animation-delay: 3s;
+            }
+        }
+
+        &:nth-child(5) {
+            margin-left: 85%;
+
+            &:after {
+                -webkit-animation-delay: 3.5s;
+                animation-delay: 3.5s;
+            }
+        }
+
+        &:nth-child(6) {
+            margin-left: 100%;
+
+            &:after {
+                -webkit-animation-delay: 1.5s;
+                animation-delay: 1.5s;
+            }
+        }
+
+        &:nth-child(7) {
+            margin-left: 33%;
+
+            &:after {
+                -webkit-animation-delay: 4s;
+                animation-delay: 4s;
+            }
+        }
+
+        &:nth-child(8) {
+            margin-left: 40%;
+
+            &:after {
+                -webkit-animation-delay: 3.8s;
+                animation-delay: 3.8s;
+            }
+        }
+
+        &:nth-child(9) {
+            margin-left: 68%;
+
+            &:after {
+                -webkit-animation-delay: 6.5s;
+                animation-delay: 6.5s;
+            }
+        }
+
+        &:nth-child(10) {
+            margin-left: 78%;
+
+            &:after {
+                -webkit-animation-delay: 3.2s;
+                animation-delay: 3.2s;
+            }
+        }
+
+        &:nth-child(11) {
+            margin-left: 55%;
+
+            &:after {
+                -webkit-animation-delay: 4.5s;
+                animation-delay: 4.5s;
+            }
+        }
+
+        &:nth-child(12) {
+            margin-left: 90%;
+
+            &:after {
+                -webkit-animation-delay: 1.8s;
+                animation-delay: 1.8s;
+            }
+        }
+    }
+
+    @-webkit-keyframes run {
+        0% {
+            top: 110%;
+        }
+
+        100% {
+            top: -50%;
+        }
+    }
+
+    @keyframes run {
+        0% {
+            top: 110%;
+        }
+
+        100% {
+            top: -50%;
+        }
+    }
+}
